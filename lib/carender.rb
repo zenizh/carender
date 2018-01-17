@@ -1,5 +1,5 @@
-require "carender/railtie"
-
-module Carender
-  # Your code goes here...
-end
+require 'carender/calendar'
+require 'carender/collection'
+require 'carender/core'
+require 'carender/helper'
+require 'carender/railtie'
