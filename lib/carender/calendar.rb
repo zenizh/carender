@@ -1,12 +1,11 @@
 module Carender
   class Calendar
-    def initialize(year, month, collection)
+    def initialize(year, month)
       @year = year
       @month = month
-      @collection = collection
     end
 
-    def render(view_context, &block)
+    def render(view_context, collection, &block)
       html = <<-EOS
         <table>
           <tr>

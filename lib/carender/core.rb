@@ -6,8 +6,8 @@ module Carender
     end
 
     def render(&block)
-      calendar = Carender::Calendar.new(*view_context.params.values_at(:year, :month).map(&:to_i), collection)
-      calendar.render(view_context, &block).html_safe
+      calendar = Carender::Calendar.new(*view_context.params.values_at(:year, :month).map(&:to_i))
+      calendar.render(view_context, collection, &block).html_safe
     end
 
     private
