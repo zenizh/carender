@@ -3,19 +3,18 @@ module Carender
     def initialize(collection, column)
       @collection = collection || []
       @column = column
-      @grouped = {}
     end
 
-    def grouped
-      return @grouped unless @grouped.empty?
+    def group
+      grouped_collection = Hash.new([])
 
       collection.each do |c|
         date = c.send(column).to_date
-        @grouped[date] = [] unless @grouped[date]
-        @grouped[date] << c
+        grouped_collection[date] = [] if grouped_collection[date].empty?
+        grouped_collection[date] << c
       end
 
-      @grouped
+      grouped_collection
     end
 
     private

@@ -2,7 +2,7 @@ module Carender
   class Core
     def initialize(view_context, options)
       @view_context = view_context
-      @collection = Carender::Collection.new(*options.values_at(:collection, :column)).grouped
+      @collection = Carender::Collection.new(*options.values_at(:collection, :column)).group
     end
 
     def render(&block)

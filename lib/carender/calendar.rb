@@ -29,7 +29,7 @@ module Carender
         end
 
         html += '<td>'
-        html += view_context.capture { block.call(d, collection[d] || []) }
+        html += view_context.capture { block.call(d, collection[d]) }
         html += '</td>'
 
         if d == date.end_of_month
@@ -47,7 +47,7 @@ module Carender
 
     private
 
-    attr_reader :year, :month, :collection
+    attr_reader :year, :month
 
     def date
       @date ||= Date.new(year, month)
