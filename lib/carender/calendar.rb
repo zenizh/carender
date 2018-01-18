@@ -6,7 +6,7 @@ module Carender
     end
 
     def render(view_context, collection, &block)
-      html = <<-EOS
+      html = <<-HTML
         <table>
           <tr>
             <th>Sun</th>
@@ -17,7 +17,7 @@ module Carender
             <th>Fri</th>
             <th>Sat</th>
           </tr>
-      EOS
+      HTML
 
       (date..date.end_of_month).each do |d|
         if d.wday == 0
