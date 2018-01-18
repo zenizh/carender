@@ -1,5 +1,4 @@
 require 'carender/calendar'
-require 'carender/collection'
 require 'carender/core'
 require 'carender/helper'
 require 'carender/railtie'
