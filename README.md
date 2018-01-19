@@ -14,7 +14,7 @@ A code of simple calendar:
 <% end %>
 ```
 
-Above code renders following table.
+Above code renders like following table on January 2018.
 The string passed as a block is rendered in each cell.
 
 ```html
