@@ -1,3 +1,7 @@
+require 'date'
+require 'active_support/core_ext/date'
+require 'active_support/core_ext/time'
+
 module Carender
   class Calendar
     def initialize(year, month)
@@ -20,7 +24,7 @@ module Carender
       HTML
 
       (date..date.end_of_month).each do |d|
-        if d.wday == 0
+        if d.wday == 0 || (d == date && d.wday != 0)
           html += '<tr>'
         end
 
@@ -29,14 +33,18 @@ module Carender
         end
 
         html += '<td>'
-        html += view_context.capture { block.call(d, collection[d]) }
+
+        if block
+          html += view_context.capture { block.call(d, collection[d]) }.to_s
+        end
+
         html += '</td>'
 
         if d == date.end_of_month
           (6 - d.wday).times { html += '<td></td>' }
         end
 
-        if d.wday == 6
+        if d.wday == 6 || (d == date.end_of_month && d.wday != 6)
           html += '</tr>'
         end
       end
