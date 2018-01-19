@@ -1,4 +1,7 @@
 require 'carender/calendar'
 require 'carender/core'
 require 'carender/helper'
-require 'carender/railtie'
+
+if defined?(Rails)
+  require 'carender/railtie'
+end
