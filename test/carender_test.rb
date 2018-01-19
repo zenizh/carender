@@ -1,15 +1,6 @@
 require 'test_helper'
-require 'action_view'
-require 'oga'
 
 class CarenderTest < Minitest::Test
-  module ViewContext
-    include ActionView::Context
-    include ActionView::Helpers::CaptureHelper
-
-    attr_accessor :params
-  end
-
   include Carender::Helper
   include ViewContext
 
