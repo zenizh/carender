@@ -21,6 +21,7 @@ class CarenderTest < Minitest::Test
     html = carender do |date|
       date.to_s
     end
+
     document = Oga.parse_html(html)
     assert_equal 'Sun', document.xpath('table/tr[1]/th[1]').text
     assert_equal 'Sat', document.xpath('table/tr[1]/th[7]').text
