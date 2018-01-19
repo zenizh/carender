@@ -10,18 +10,7 @@ module Carender
     end
 
     def render(view_context, collection, &block)
-      html = <<-HTML
-        <table>
-          <tr>
-            <th>Sun</th>
-            <th>Mon</th>
-            <th>Tue</th>
-            <th>Wed</th>
-            <th>Thu</th>
-            <th>Fri</th>
-            <th>Sat</th>
-          </tr>
-      HTML
+      html = '<table><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>'
 
       (date..date.end_of_month).each do |d|
         if d.wday == 0 || (d == date && d.wday != 0)
