@@ -1,5 +1,8 @@
 # Carender
 
+[![Gem Version](https://badge.fury.io/rb/carender.svg)](https://badge.fury.io/rb/carender)
+[![Build Status](https://travis-ci.org/kami-zh/carender.svg?branch=master)](https://travis-ci.org/kami-zh/carender)
+
 A simple calendar gem for Rails application.
 
 ## Usage
