@@ -7,8 +7,8 @@ Gem::Specification.new do |s|
   s.version     = Carender::VERSION
   s.authors     = ['kami-zh']
   s.email       = ['hiroki.zenigami@gmail.com']
-  s.summary     = 'A simple calendar gem for Rails application.'
-  s.description = 'A simple calendar gem for Rails application.'
+  s.summary     = 'A monthly calendar for Rails application.'
+  s.description = 'A monthly calendar for Rails application.'
   s.homepage    = 'https://github.com/kami-zh/carender'
   s.license     = 'MIT'
   s.files       = Dir['lib/**/*', 'LICENSE.txt', 'Rakefile', 'README.md']
