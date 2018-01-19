@@ -3,13 +3,12 @@
 [![Gem Version](https://badge.fury.io/rb/carender.svg)](https://badge.fury.io/rb/carender)
 [![Build Status](https://travis-ci.org/kami-zh/carender.svg?branch=master)](https://travis-ci.org/kami-zh/carender)
 
-A simple calendar gem for Rails application.
+This gem renders a monthly calendar for Ruby on Rails application.
 
 ## Usage
 
-This library automatically renders the calendar as HTML table by reading `params[:year]` and `params[:month]`.
-
-A code of simple calendar:
+This gem automatically renders a monthly calendar as HTML table by fetching `params[:year]` and `params[:month]` at view context.
+Following code renders a simple monthly calendar:
 
 ```erb
 <%= carender do |date| %>
@@ -17,21 +16,21 @@ A code of simple calendar:
 <% end %>
 ```
 
-Above code renders like following table on January 2018.
-The string passed as a block is rendered in each cell.
+The content passed as a block is rendered in each cell.
+For example, above code renders like following HTML table.
 
 ```html
 <table>
   <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
   <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
   <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
-  <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
-  <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
-  <tr><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td></tr>
+  ...
 </table>
 ```
 
-With a collection which is grouped by specified column:
+### Collection
+
+To render a calendar with a collection which is grouped by the specified column, you can pass `:collection` and `:column` arguments like as follows:
 
 ```erb
 <%= carender collection: @posts, column: :posted_on do |date, posts| %>
